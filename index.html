@@ -6,90 +6,128 @@
   <title>you're here!</title>
   <style>
     body {
-      margin: 0;
-      
-      justify-content: center;
-      align-items: center;
-      height: 80vh;
-      background-color: white;
-      font-family: 'Courier New', monospace;
-      color: black;
-      overflow: hidden;
-    }
-
-    .firstimg {
-        width: 70%;
-        height: 300px;
-        justify-self: center;
-        margin-left: 15%;
-       
-    }
-
-    .loading-container {
-      text-align: center;
-    }
-
-    .loading-bar {
-      width: 80%;
-      height: 8px;
-      background-color: white;
-      border: 2px solid black;
-      margin-bottom: 20px;
-      justify-self: center;
-    }
-
-    .loading-bar-fill {
-      width: 0;
-      height: 100%;
-      background-color: #ed705f;
-      border: 2px solid black;
-      animation: loading 10s linear forwards;
-      
-    }
-
-    @keyframes loading {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    .loading-text {
-      font-size: 16px;
-      letter-spacing: 1px;
-      margin-top: 20px;
-      opacity: 100;
-      font-weight: 400;
-      width: 300px;
-      text-align: center;
-      justify-self: center;
-     
-
-    }
-
-
-    .hidden-button {
-      display: none;
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #e9babe;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-family:monospace;
-      border-radius: 7px;
-    }
-
-  
-    .show-button {
-      display: inline-block;
-    }
-    .heading {margin-left: 20%;
-    font-family: monospace;
-    width: 400px;
-    margin-top:120px ;
-    font-weight: bolder;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: white;
+  font-family: 'Courier New', monospace;
+  color: black;
+  overflow: hidden; 
+  text-align: center;
 }
-    
+
+.firstimg {
+  width: 80%;
+  max-width: 400px; 
+  height: auto; 
+  margin: 20px auto;
+}
+
+.loading-container {
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+}
+
+.loading-bar {
+  width: 80%;
+  height: 8px;
+  background-color: white;
+  border: 2px solid black;
+  margin-bottom: 20px;
+  justify-self: center;
+}
+
+.loading-bar-fill {
+  width: 0;
+  height: 100%;
+  background-color: #ed705f;
+  border: 2px solid black;
+  animation: loading 10s linear forwards;
+}
+
+@keyframes loading {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.loading-text {
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  opacity: 100;
+  font-weight: 400;
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+  justify-self: center;
+}
+
+.hidden-button {
+  display: none;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #e9babe;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: monospace;
+  border-radius: 7px;
+}
+
+.show-button {
+  display: inline-block;
+}
+
+.heading {
+  font-family: monospace;
+  width: 80%;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+
+@media screen and (max-width: 600px) {
+  body {
+    height: 100vh; 
+    padding: 0 10px; 
+  }
+
+  .firstimg {
+    width: 70%; 
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .loading-bar {
+    width: 90%; 
+  }
+
+  .loading-text {
+    font-size: 14px; 
+    width: 100%;
+  }
+
+  .hidden-button {
+    font-size: 14px;
+    padding: 12px 25px;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+}
 
   </style>
 </head>
