@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=414, initial-scale=1.0">
+    <title>Let me love you</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 414px;
+            overflow-x: hidden;
+            font-family: monospace;
+        }
+
+        body p {
+          font-size: large;
+          font-weight: 300;
+        }
+
+        #container, #second-stage, #typing-stage {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .hidden {
+            display: none;
+            
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        #main-image, #second-image {
+            width: 350px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        #next-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+       
+
+        @keyframes popEffect {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .typingtxt {
+          
+          width: 80%;
+          font-size: small;
+          text-align: justify;
+          margin-left: 10%;
+        }
+
+        body h1 { width: 300px;
+        text-align: center;
+      justify-self: center;}
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="main-heading" class="fade-in">Ohh...looks like a gift for Spamandla :)</h1>
+        <p id="sub-heading" class="fade-in">hmm...what could it be?</p>
+        <img id="main-image" class="fade-in" src="images/letter.png" alt="Main Image">
+        <p id="description" class="fade-in">Click on your gift to open it :)</p>
+    </div>
+
+    <div id="second-stage" class="hidden">
+        <img id="second-image" src="images/heartsenv.png" alt="Second Image">
+        <p id="second-description">ohh...an envelope :p let's open it</p>
+    </div>
+
+    
+    <div id="typing-stage" class="hidden">
+        
+        <p class="typingtxt" id="typing-text"></p>
+        <button id="next-button" class="hidden">There's more?!</button>
+    </div>
+
+    <script>
+       
+        const mainImage = document.getElementById('main-image');
+        const mainHeading = document.getElementById('main-heading');
+        const subHeading = document.getElementById('sub-heading');
+        const description = document.getElementById('description');
+
+        const secondStage = document.getElementById('second-stage');
+        const secondImage = document.getElementById('second-image');
+
+        const typingStage = document.getElementById('typing-stage');
+        const typingText = document.getElementById('typing-text');
+        const nextButton = document.getElementById('next-button');
+
+       
+        mainImage.addEventListener('click', () => {
+            
+            mainHeading.style.display = 'none';
+            subHeading.style.display = 'none';
+            mainImage.style.display = 'none';
+            description.style.display = 'none';
+
+            
+            secondStage.style.display = 'block';
+            secondImage.style.animation = 'popEffect 3s';
+        });
+
+        
+        secondImage.addEventListener('click', () => {
+           
+            secondStage.style.display = 'none';
+
+            
+            typingStage.style.display = 'block';
+            startTypingEffect();
+        });
+
+        
+        function startTypingEffect() {
+    const text = `Hey Mr. Lol, how are you? I hope you're doing well. So here's the thing... you remember when you asked me why I was on are laptop and I just smiled at you? Yeah, so this is what I was busy with. You remember yesterday, when I asked for your screen size? well, yeah, this, this is what's up. Anyway, how are you baby? how are you doing? Are you doing okay? as for me, I'm good :) and I'm shy lol idk what to say...well i know but...well... Yeah. I just wanna tell you how much I love you, I love you so much. You became a big part of my life and I never thought a simple tinder text could turn out to be this amazing thing we have going on. You are amazing. You are perfect and I love you so much. You make me happy and no matter how cliché it may sound, you brighten up my days, you really do. I am so scared that you're leaving 'cause I don't want you to leave. I don't wanna stop getting into an Uber at night, smiling for 20 minutes straight knowing I'm gonna see my favorite person in the world. You made it all worth it. Getting out of my comfort zone, doing things I never thought I’d do—all for us, for you. And I’d do it all over again. I don't wanna stop getting 10 forehead kisses every 30 seconds. I don't wanna stop being your girl and I don't want you to stop being my man 'cause you are my man...you are MY MAN! do you understand the depth of that? I'm gonna miss you and I pray every night that something comes up cause I really want you to stay. That's not the point of this message tho...I just wanna say you're the best and never doubt my love for you. I appreciate you, I love you.\n\n~your favorite girl :p`;
+    let index = 0;
+    const typingSpeed = 50;
+
+            const typingInterval = setInterval(() => {
+                if (index < text.length) {
+                    typingText.textContent += text[index];
+                    index++;
+                } else {
+                    clearInterval(typingInterval);
+                    nextButton.classList.remove('hidden');
+                }
+            }, 100); 
+        }
+
+       
+        nextButton.addEventListener('click', () => {
+            window.location.href = "dashboard.html";
+        });
+    </script>
+</body>
+</html>

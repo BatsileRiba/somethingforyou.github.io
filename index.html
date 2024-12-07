@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>you're here!</title>
+  <style>
+    body {
+      margin: 0;
+      
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      background-color: white;
+      font-family: 'Courier New', monospace;
+      color: black;
+      overflow: hidden;
+    }
+
+    .firstimg {
+        width: 70%;
+        height: 300px;
+        justify-self: center;
+        margin-left: 15%;
+       
+    }
+
+    .loading-container {
+      text-align: center;
+    }
+
+    .loading-bar {
+      width: 80%;
+      height: 8px;
+      background-color: white;
+      border: 2px solid black;
+      margin-bottom: 20px;
+      justify-self: center;
+    }
+
+    .loading-bar-fill {
+      width: 0;
+      height: 100%;
+      background-color: #ed705f;
+      border: 2px solid black;
+      animation: loading 10s linear forwards;
+      
+    }
+
+    @keyframes loading {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .loading-text {
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin-top: 20px;
+      opacity: 100;
+      font-weight: 400;
+      width: 300px;
+      text-align: center;
+      justify-self: center;
+     
+
+    }
+
+
+    .hidden-button {
+      display: none;
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #e9babe;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-family:monospace;
+      border-radius: 7px;
+    }
+
+  
+    .show-button {
+      display: inline-block;
+    }
+    .heading {margin-left: 20%;
+    font-family: monospace;
+    width: 400px;
+    margin-top:120px ;
+    font-weight: bolder;
+}
+    
+
+  </style>
+</head>
+<body>
+  <h1 class="heading">My heart in words</h1>
+  <img class="firstimg" src="images/rosesbabe-removebg-preview.png" alt="">
+  <div class="loading-container">
+    <div class="loading-bar">
+      <div class="loading-bar-fill"></div>
+    </div>
+    <div class="loading-text">You're about to enter a world filled with love</div>
+   <a href="heyyy.html"> <button class="hidden-button" id="startButton">I'm ready babyy</button> </a>
+  </div>
+
+  <script>
+    
+    const loadingBarFill = document.querySelector('.loading-bar-fill');
+    const button = document.getElementById('startButton');
+
+    
+    loadingBarFill.addEventListener('animationend', () => {
+      button.style.display = 'inline-block';
+    });
+  </script>
+
+</body>
+</html>
